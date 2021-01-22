@@ -1,0 +1,19 @@
+{
+  "name": "vue2-leaflet-bigimage-print",
+  "version": "1.0.0",
+  "description": "Leaflet Print component for Vue2Leaflet",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IKNikolov/vue2-leaflet-BigImage-print.git"
+  },
+  "author": "Ivaylo Nikolov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IKNikolov/vue2-leaflet-BigImage-print/issues"
+  },
+  "homepage": "https://github.com/IKNikolov/vue2-leaflet-BigImage-print#readme"
+}
