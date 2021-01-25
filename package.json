@@ -1,6 +1,6 @@
 {
   "name": "vue2-leaflet-tools",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Leaflet Print and Fullscreen component for Vue2Leaflet",
   "main": "index.js",
   "scripts": {
