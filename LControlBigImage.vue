@@ -8,6 +8,7 @@ import {
 //import 'leaflet.bigimage/dist/Leaflet.BigImage.min.js';
 //import 'leaflet.bigimage/dist/Leaflet.BigImage.min.css';
 import 'leaflet.browser.print/dist/leaflet.browser.print.min.js';
+//import 'leaflet.browser.print/dist/leaflet.browser.print.js';
 export default {
   name: 'LControlBigImage',
   mixins: [
@@ -20,36 +21,27 @@ export default {
       options: this.options,
     }, this);
 
-    /*
-    this.mapObject = new L.Control.BigImage(options);
-    propsBinder(this, this.mapObject, this.$options.props);
-    this.mapObject.addTo(this.$parent.mapObject);
-    */
-   /*
-    var customActionToPrint = function (context, mode) {
-      return function () {
-        window.alert("We are printing the MAP. Let's do Custom print here!");
-        context._printCustom(mode);
-      }
+    let printOptions = {};
+    if(typeof options.options != 'undefined' && Array.isArray(options.options.printModes)) {
+      let newPrintModes = [];
+      options.options.printModes.forEach((value, index) => {
+        if (value.type == 'all'){
+          newPrintModes.push(L.control.browserPrint.mode.landscape(value.name, "tabloid"));
+        } else if (value.type == 'landscape'){
+          newPrintModes.push(L.control.browserPrint.mode.landscape(value.name));
+        } else if (value.type == 'portrait'){
+          newPrintModes.push(value.name);
+        } else if (value.type == 'custom'){
+          newPrintModes.push(L.control.browserPrint.mode.custom(value.name, "B5"));
+        }
+      });
+
+      options.options.printModes = newPrintModes;
+      printOptions = options.options;
     }
-    */
-   /*
-   {
-      title: 'Just print me!',
-      documentTitle: 'Map printed using leaflet.browser.print plugin',
-      closePopupsOnPrint: false,
-      printModes: [
-        L.control.browserPrint.mode.landscape("Всичко", "tabloid"),
-        //L.control.browserPrint.mode("Alert", "User specified print action", "A6", customActionToPrint, false),
-        L.control.browserPrint.mode.landscape(),
-        "Portrait",
-        //L.control.browserPrint.mode.auto("Automatico", "B4"),
-        L.control.browserPrint.mode.custom("Селектиране на зона за принтиране", "B5")
-      ],
-      manualMode: false
-    }
-    */
-    this.mapObject = new L.control.browserPrint(options)
+
+    
+    this.mapObject = new L.control.browserPrint(printOptions)
     propsBinder(this, this.mapObject, this.$options.props);
     this.mapObject.addTo(this.$parent.mapObject);
   },
