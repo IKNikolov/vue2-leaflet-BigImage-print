@@ -1,3 +1,8 @@
+<style scoped>
+ .browser-print-holder {
+     padding-left: 0;
+ }
+</style>
 <script>
 import {
   OptionsMixin,
