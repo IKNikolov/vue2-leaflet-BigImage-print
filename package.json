@@ -1,6 +1,6 @@
 {
   "name": "vue2-leaflet-bigimage-print",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Leaflet Print component for Vue2Leaflet",
   "main": "index.js",
   "scripts": {
