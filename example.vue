@@ -50,6 +50,8 @@ export default {
         printModes: [
           {"type": 'all', "name": 'All'},
           {"type": 'landscape', "name": 'Landscape'},
+          {'type': 'portrait', 'name': 'Portrait'},
+          {'type': 'custom', 'name': 'Select'}
         ],
         manualMode: false
       }

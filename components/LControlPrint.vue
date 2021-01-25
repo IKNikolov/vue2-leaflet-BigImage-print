@@ -27,7 +27,7 @@ export default {
         } else if (value.type == 'landscape'){
           newPrintModes.push(L.control.browserPrint.mode.landscape(value.name));
         } else if (value.type == 'portrait'){
-          newPrintModes.push(value.name);
+          newPrintModes.push(L.control.browserPrint.mode.portrait(value.name));
         } else if (value.type == 'custom'){
           newPrintModes.push(L.control.browserPrint.mode.custom(value.name, "B5"));
         }
