@@ -1,6 +1,6 @@
 <style scoped>
  .browser-print-holder {
-     padding-left: 0;
+     padding-left: 0 !important;
  }
 </style>
 <script>
