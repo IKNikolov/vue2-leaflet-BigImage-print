@@ -33,20 +33,23 @@ export default {
       }
     }
     */
-    this.mapObject = new L.control.browserPrint({
+   /*
+   {
       title: 'Just print me!',
       documentTitle: 'Map printed using leaflet.browser.print plugin',
       closePopupsOnPrint: false,
       printModes: [
         L.control.browserPrint.mode.landscape("Всичко", "tabloid"),
         //L.control.browserPrint.mode("Alert", "User specified print action", "A6", customActionToPrint, false),
-        L.control.browserPrint.mode.landscape(""),
+        L.control.browserPrint.mode.landscape(),
         "Portrait",
         //L.control.browserPrint.mode.auto("Automatico", "B4"),
         L.control.browserPrint.mode.custom("Селектиране на зона за принтиране", "B5")
       ],
       manualMode: false
-    })
+    }
+    */
+    this.mapObject = new L.control.browserPrint(options)
     propsBinder(this, this.mapObject, this.$options.props);
     this.mapObject.addTo(this.$parent.mapObject);
   },
