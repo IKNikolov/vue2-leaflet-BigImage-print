@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/IKNikolov/vue2-leaflet-BigImage-print.git"
+    "url": "git+https://github.com/IKNikolov/vue2-leaflet-inikolov-simple-tools.git"
   },
   "author": "Ivaylo Nikolov",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/IKNikolov/vue2-leaflet-BigImage-print/issues"
+    "url": "https://github.com/IKNikolov/vue2-leaflet-inikolov-simple-tools/issues"
   },
-  "homepage": "https://github.com/IKNikolov/vue2-leaflet-BigImage-print#readme",
+  "homepage": "https://github.com/IKNikolov/vue2-leaflet-inikolov-simple-tools#readme",
   "devDependencies": {
     "@types/leaflet": "^1.5.21",
     "leaflet": "^1.7.1",
