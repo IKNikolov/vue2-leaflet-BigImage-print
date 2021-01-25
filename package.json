@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "leaflet.bigimage": "^1.0.1",
+    "leaflet.browser.print": "^1.0.6",
     "vue2-leaflet": "^2.6.0"
   }
 }
