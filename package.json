@@ -1,10 +1,10 @@
 {
-  "name": "vue2-leaflet-bigimage-print",
+  "name": "vue2-leaflet-tools",
   "version": "1.0.8",
-  "description": "Leaflet Print component for Vue2Leaflet",
+  "description": "Leaflet Print and Fullscreen component for Vue2Leaflet",
   "main": "index.js",
   "scripts": {
-    "example": "poi --serve"
+    "example": "poi example.js --serve"
   },
   "repository": {
     "type": "git",
@@ -24,7 +24,7 @@
     "vue2": "^1.0.0"
   },
   "dependencies": {
-    "leaflet.bigimage": "^1.0.1",
+    "leaflet-fullscreen": "^1.0.2",
     "leaflet.browser.print": "^1.0.6",
     "vue2-leaflet": "^2.6.0"
   }

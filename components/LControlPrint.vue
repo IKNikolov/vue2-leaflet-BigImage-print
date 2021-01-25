@@ -5,12 +5,9 @@ import {
   propsBinder,
   optionsMerger
 } from 'vue2-leaflet';
-//import 'leaflet.bigimage/dist/Leaflet.BigImage.min.js';
-//import 'leaflet.bigimage/dist/Leaflet.BigImage.min.css';
 import 'leaflet.browser.print/dist/leaflet.browser.print.min.js';
-//import 'leaflet.browser.print/dist/leaflet.browser.print.js';
 export default {
-  name: 'LControlBigImage',
+  name: 'LControlPrint',
   mixins: [
     ControlMixin,
     OptionsMixin,
