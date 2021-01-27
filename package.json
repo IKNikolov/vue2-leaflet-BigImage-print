@@ -1,6 +1,6 @@
 {
   "name": "vue2-leaflet-inikolov-simple-tools",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "description": "Leaflet Print and Fullscreen component for Vue2Leaflet",
   "main": "index.js",
   "scripts": {
