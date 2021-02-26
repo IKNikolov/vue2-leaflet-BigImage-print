@@ -12,6 +12,7 @@
       />
       <l-control-fullscreen position="topleft" :options="fullscreenOptions" />
       <l-control-print :options="printOptions"  />
+      <l-control-poly-line-measure :options="polylineOptions" />
     </l-map>
   </div>
 </template>
@@ -24,12 +25,14 @@ import {
 } from 'vue2-leaflet';
 import LControlPrint from "./components/LControlPrint.vue";
 import LControlFullscreen from "./components/LControlFullscreen.vue";
+import LControlPolyLineMeasure from "./components/LControlPolyLineMeasure.vue";
 export default {
   components: {
     LMap,
     LTileLayer,
     LControlPrint,
-    LControlFullscreen
+    LControlFullscreen,
+    LControlPolyLineMeasure
   },
   data() {
     return {
@@ -54,6 +57,11 @@ export default {
           {'type': 'custom', 'name': 'Select'}
         ],
         manualMode: false
+      },
+      polylineOptions: {
+        position: 'topleft',
+        showClearControl: true,
+        showUnitControl: true
       }
     };
   },
