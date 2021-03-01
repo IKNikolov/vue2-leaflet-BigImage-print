@@ -5,10 +5,11 @@ import {
   propsBinder,
   optionsMerger
 } from 'vue2-leaflet';
-import 'leaflet-fullscreen/dist/leaflet.fullscreen.css';
-import 'leaflet-fullscreen/dist/Leaflet.fullscreen.min.js';
+import '@fortawesome/fontawesome-free/css/all.min.css';
+import 'leaflet-history/dist/leaflet-history.css';
+import 'leaflet-history/dist/leaflet-history.js';
 export default {
-  name: 'LControlFullscreen',
+  name: 'LControlHistory',
   mixins: [
     ControlMixin,
     OptionsMixin,
@@ -19,7 +20,7 @@ export default {
       options: this.options,
     }, this);
 
-    this.mapObject = new L.Control.Fullscreen(options);
+    this.mapObject = new L.HistoryControl(options);
     propsBinder(this, this.mapObject, this.$options.props);
     this.mapObject.addTo(this.$parent.mapObject);
   },
@@ -29,11 +30,8 @@ export default {
 };
 </script>
 <style>
-  .leaflet-control-measure a.cancel,
-  .leaflet-control-measure a.finish,
-  .leaflet-control-measure a.start {
-    width: auto !important;
-    text-align: left;
-    display: inline;
-  }
+    .history-control.leaflet-bar.horizontal a {
+        width: auto;
+        padding: 0 5px 0 5px;
+    }
 </style>
