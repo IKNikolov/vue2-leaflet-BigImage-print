@@ -28,3 +28,13 @@ export default {
   },
 };
 </script>
+
+<style>
+  .leaflet-control-measure-interaction a.cancel,
+  .leaflet-control-measure-interaction a.finish,
+  .leaflet-control-measure-interaction a.start {
+    width: auto !important;
+    text-align: left !important;
+    display: inline !important;
+  }
+</style>
