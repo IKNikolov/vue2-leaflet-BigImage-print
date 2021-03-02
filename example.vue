@@ -1,7 +1,7 @@
 <template>
   <div style="height: 100%; width: 100%">
     <l-map
-      style="height: 400px"
+      style="height: 600px"
       :center="mapCentre"
       :zoom="mapZoom"
       ref="map"
@@ -16,6 +16,7 @@
       <l-control-fullscreen position="topleft" :options="fullscreenOptions" />
       <l-control-print :options="printOptions"  />
       <l-control-history :options="historyOptions"  />
+      <l-control-geo-search :options="geoSearchOptions" :providerOptions="providerOptions"  />
     </l-map>
   </div>
 </template>
@@ -31,6 +32,7 @@ import LControlFullscreen from "./components/LControlFullscreen.vue";
 import LControlPolyLineMeasure from "./components/LControlPolyLineMeasure.vue";
 import LControlAreaMeasure from "./components/LControlAreaMeasure.vue";
 import LControlHistory from "./components/LControlHistory.vue";
+import LControlGeoSearch from "./components/LControlGeoSearch.vue";
 export default {
   components: {
     LMap,
@@ -39,7 +41,8 @@ export default {
     LControlFullscreen,
     LControlPolyLineMeasure,
     LControlAreaMeasure,
-    LControlHistory
+    LControlHistory,
+    LControlGeoSearch,
   },
   data() {
     return {
@@ -76,6 +79,14 @@ export default {
       historyOptions: {
         backText: 'Back',
         forwardText: 'Forward',
+      },
+      geoSearchOptions: {
+        position: 'topright',
+        style: 'bar',
+      },
+      providerOptions: {
+        language: 'bg',
+        region: 'bg',
       }
     };
   },

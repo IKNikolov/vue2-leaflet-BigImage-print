@@ -7,6 +7,8 @@ import {
 } from 'vue2-leaflet';
 import 'leaflet-fullscreen/dist/leaflet.fullscreen.css';
 import 'leaflet-fullscreen/dist/Leaflet.fullscreen.min.js';
+
+
 export default {
   name: 'LControlFullscreen',
   mixins: [
