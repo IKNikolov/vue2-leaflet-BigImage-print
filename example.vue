@@ -1,7 +1,7 @@
 <template>
   <div style="height: 100%; width: 100%">
     <l-map
-      style="height: 400px"
+      style="height: 600px"
       :center="mapCentre"
       :zoom="mapZoom"
       ref="map"
@@ -10,8 +10,13 @@
         :url="tileUrl"
         :attribution="tileAttribution"
       />
+      
+      <l-control-area-measure :options="areaMesureOptions" />
+      <l-control-poly-line-measure :options="polylineOptions" />
       <l-control-fullscreen position="topleft" :options="fullscreenOptions" />
       <l-control-print :options="printOptions"  />
+      <l-control-history :options="historyOptions"  />
+      <l-control-geo-search :options="geoSearchOptions" :providerOptions="providerOptions"  />
     </l-map>
   </div>
 </template>
@@ -24,12 +29,20 @@ import {
 } from 'vue2-leaflet';
 import LControlPrint from "./components/LControlPrint.vue";
 import LControlFullscreen from "./components/LControlFullscreen.vue";
+import LControlPolyLineMeasure from "./components/LControlPolyLineMeasure.vue";
+import LControlAreaMeasure from "./components/LControlAreaMeasure.vue";
+import LControlHistory from "./components/LControlHistory.vue";
+import LControlGeoSearch from "./components/LControlGeoSearch.vue";
 export default {
   components: {
     LMap,
     LTileLayer,
     LControlPrint,
-    LControlFullscreen
+    LControlFullscreen,
+    LControlPolyLineMeasure,
+    LControlAreaMeasure,
+    LControlHistory,
+    LControlGeoSearch,
   },
   data() {
     return {
@@ -54,6 +67,26 @@ export default {
           {'type': 'custom', 'name': 'Select'}
         ],
         manualMode: false
+      },
+      polylineOptions: {
+        position: 'topleft',
+        showClearControl: true,
+        showUnitControl: true
+      },
+      areaMesureOptions: {
+        position: 'topleft'
+      },
+      historyOptions: {
+        backText: 'Back',
+        forwardText: 'Forward',
+      },
+      geoSearchOptions: {
+        position: 'topright',
+        style: 'bar',
+      },
+      providerOptions: {
+        language: 'bg',
+        region: 'bg',
       }
     };
   },

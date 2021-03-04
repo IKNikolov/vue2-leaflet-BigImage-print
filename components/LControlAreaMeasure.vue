@@ -5,12 +5,10 @@ import {
   propsBinder,
   optionsMerger
 } from 'vue2-leaflet';
-import 'leaflet-fullscreen/dist/leaflet.fullscreen.css';
-import 'leaflet-fullscreen/dist/Leaflet.fullscreen.min.js';
-
-
+import 'leaflet-measure/dist/leaflet-measure.css';
+import 'leaflet-measure/dist/leaflet-measure.js';
 export default {
-  name: 'LControlFullscreen',
+  name: 'LControlAreaMesure',
   mixins: [
     ControlMixin,
     OptionsMixin,
@@ -21,7 +19,7 @@ export default {
       options: this.options,
     }, this);
 
-    this.mapObject = new L.Control.Fullscreen(options);
+    this.mapObject = new L.Control.Measure(options);
     propsBinder(this, this.mapObject, this.$options.props);
     this.mapObject.addTo(this.$parent.mapObject);
   },
@@ -30,3 +28,13 @@ export default {
   },
 };
 </script>
+
+<style>
+  .leaflet-control-measure-interaction a.cancel,
+  .leaflet-control-measure-interaction a.finish,
+  .leaflet-control-measure-interaction a.start {
+    width: auto !important;
+    text-align: left !important;
+    display: inline !important;
+  }
+</style>
