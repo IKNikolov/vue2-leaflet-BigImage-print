@@ -38,7 +38,17 @@ export default {
     }
 
     
-    this.mapObject = new L.control.browserPrint(printOptions)
+    this.mapObject = new L.control.browserPrint(printOptions);
+
+    if (typeof options.showScale != 'undefined' && options.showScale === true){
+      console.log(options.showScale);
+      let scaleOptions = options.scaleOptions ?? {};
+      this.$parent.mapObject.on("browser-print-start", function(e){
+				L.control.scale(scaleOptions).addTo(e.printMap);
+			});
+      
+    }
+
     propsBinder(this, this.mapObject, this.$options.props);
     this.mapObject.addTo(this.$parent.mapObject);
   },
