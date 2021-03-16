@@ -4,7 +4,6 @@
   "description": "Leaflet packages preparete to be used as vue components",
   "main": "index.js",
   "scripts": {
-    "install": "git clone https://github.com/MarcChasse/leaflet.ScaleFactor node_modules/leaflet.ScaleFactor",
     "example": "poi example.js --serve"
   },
   "keywords": [
