@@ -1,11 +1,23 @@
 {
   "name": "vue2-leaflet-inikolov-simple-tools",
   "version": "1.4.0",
-  "description": "Leaflet Print and Fullscreen component for Vue2Leaflet",
+  "description": "Leaflet packages preparete to be used as vue components",
   "main": "index.js",
   "scripts": {
     "example": "poi example.js --serve"
   },
+  "keywords": [
+    "Leaflet fullscreen",
+    "Leaflet print",
+    "Leaflet measure",
+    "Leaflet History Control",
+    "Leaflet GeoSearch",
+    "Leaflet WMS Overlay",
+    "plugins",
+    "leaflet",
+    "geo",
+    "map"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/IKNikolov/vue2-leaflet-inikolov-simple-tools.git"
