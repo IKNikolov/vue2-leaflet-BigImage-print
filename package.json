@@ -4,6 +4,7 @@
   "description": "Leaflet packages preparete to be used as vue components",
   "main": "index.js",
   "scripts": {
+    "install": "git clone https://github.com/MarcChasse/leaflet.ScaleFactor node_modules/leaflet.ScaleFactor",
     "example": "poi example.js --serve"
   },
   "keywords": [
@@ -37,6 +38,7 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.2",
+    "jquery": "^3.6.0",
     "leaflet-fullscreen": "^1.0.2",
     "leaflet-geosearch": "^3.2.1",
     "leaflet-history": "git+https://github.com/cscott530/leaflet-history.git",

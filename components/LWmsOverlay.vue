@@ -19,12 +19,14 @@ export default {
     }
   },
   mounted() {
+    /*
     const options = optionsMerger({
       ...this.controlOptions,
       options: this.options,
     }, this);
+    */
 
-    this.mapObject = new wms.overlay(this.url, options);
+    this.mapObject = new wms.overlay(this.url, this.options);
     propsBinder(this, this.mapObject, this.$options.props);
     this.mapObject.addTo(this.$parent.mapObject);
   },

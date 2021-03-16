@@ -12,6 +12,7 @@
       />
       <l-control-layers position="topright"  ></l-control-layers>
       <l-control-scale position="bottomleft" :imperial="false" :metric="true"></l-control-scale>
+      <l-control-scale-factor :options="svaleFactorOptions" />
       
       <l-control-area-measure :options="areaMesureOptions" />
       <l-control-poly-line-measure :options="polylineOptions" />
@@ -46,6 +47,7 @@ import LControlAreaMeasure from "./components/LControlAreaMeasure.vue";
 import LControlHistory from "./components/LControlHistory.vue";
 import LControlGeoSearch from "./components/LControlGeoSearch.vue";
 import LWmsOverlay from "./components/LWmsOverlay.vue";
+import LControlScaleFactor from "./components/LControlScaleFactor.vue";
 export default {
   components: {
     LMap,
@@ -59,7 +61,8 @@ export default {
     LControlScale,
     LWmsOverlay,
     LLayerGroup,
-    LControlLayers
+    LControlLayers,
+    LControlScaleFactor
   },
   data() {
     return {
@@ -132,8 +135,12 @@ export default {
         format: 'image/png',
         transparent: true,
         tiled: false,
-        maxZoom: 12,
+        maxZoom: 19,
         pane: 'points'
+      },
+
+      svaleFactorOptions: {
+        position: 'bottomright'
       }
 
     };
