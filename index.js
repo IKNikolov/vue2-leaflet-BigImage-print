@@ -4,6 +4,7 @@ import LControlPolyLineMeasure from "./components/LControlPolyLineMeasure.vue";
 import LControlAreaMeasure from "./components/LControlAreaMeasure.vue";
 import LControlHistory from "./components/LControlHistory.vue";
 import LControlGeoSearch from "./components/LControlGeoSearch.vue";
+import LWmsOverlay from "./components/LWmsOverlay.vue";
 
 export {
   LControlPrint,
@@ -11,6 +12,7 @@ export {
   LControlPolyLineMeasure,
   LControlAreaMeasure,
   LControlHistory,
-  LControlGeoSearch
+  LControlGeoSearch,
+  LWmsOverlay
 }
 
