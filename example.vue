@@ -10,6 +10,7 @@
         :url="tileUrl"
         :attribution="tileAttribution"
       />
+      <l-control-layers position="topright"  ></l-control-layers>
       <l-control-scale position="bottomleft" :imperial="false" :metric="true"></l-control-scale>
       
       <l-control-area-measure :options="areaMesureOptions" />
@@ -18,6 +19,13 @@
       <l-control-print :options="printOptions"  />
       <l-control-history :options="historyOptions"  />
       <l-control-geo-search :options="geoSearchOptions" :providerOptions="providerOptions"  />
+
+      <l-layer-group
+        layer-type="overlay"
+        name="WMS Overlay"
+      >
+        <l-wms-overlay :url="WMSURL" :options="WMSOptions" />
+      </l-layer-group>
     </l-map>
   </div>
 </template>
@@ -27,7 +35,9 @@ import L from 'leaflet';
 import {
   LMap,
   LTileLayer,
-  LControlScale
+  LControlScale,
+  LLayerGroup,
+  LControlLayers
 } from 'vue2-leaflet';
 import LControlPrint from "./components/LControlPrint.vue";
 import LControlFullscreen from "./components/LControlFullscreen.vue";
@@ -35,6 +45,7 @@ import LControlPolyLineMeasure from "./components/LControlPolyLineMeasure.vue";
 import LControlAreaMeasure from "./components/LControlAreaMeasure.vue";
 import LControlHistory from "./components/LControlHistory.vue";
 import LControlGeoSearch from "./components/LControlGeoSearch.vue";
+import LWmsOverlay from "./components/LWmsOverlay.vue";
 export default {
   components: {
     LMap,
@@ -45,12 +56,15 @@ export default {
     LControlAreaMeasure,
     LControlHistory,
     LControlGeoSearch,
-    LControlScale
+    LControlScale,
+    LWmsOverlay,
+    LLayerGroup,
+    LControlLayers
   },
   data() {
     return {
       mapCentre: [51, -114],
-      mapZoom: 10,
+      mapZoom: 8,
       tileUrl: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
       tileAttribution: '&copy; <a href="//osm.org/copyright">OpenStreetMap</a> contributors',
 
@@ -111,6 +125,16 @@ export default {
         language: 'bg',
         region: 'bg',
       },
+
+      WMSURL: 'https://mesonet.agron.iastate.edu/cgi-bin/wms/us/mrms.cgi?',
+      WMSOptions: {
+        layers: 'mrms_p72h',
+        format: 'image/png',
+        transparent: true,
+        tiled: false,
+        maxZoom: 12,
+        pane: 'points'
+      }
 
     };
   },
