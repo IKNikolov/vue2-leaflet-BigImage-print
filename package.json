@@ -38,7 +38,6 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.2",
-    "jquery": "^3.6.0",
     "leaflet-fullscreen": "^1.0.2",
     "leaflet-geosearch": "^3.2.1",
     "leaflet-history": "git+https://github.com/cscott530/leaflet-history.git",
