@@ -1,6 +1,6 @@
 {
   "name": "vue2-leaflet-inikolov-simple-tools",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "Leaflet packages preparete to be used as vue components",
   "main": "index.js",
   "scripts": {
